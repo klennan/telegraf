@@ -23,7 +23,7 @@ function Install-Telegraf {
         $InfluxUrl           = ""
 
         foreach ($Opt in $Options) { $OptionalFiles += "conf\$Opt.conf" }
-        $ArgumentList = @($MandatoryFiles,$OptionalFiles)
+        $ArgumentList = @($MandatoryFiles,$OptionalFiles,$InfluxBucket,$InfluxOrg,$InfluxToken,$InfluxUrl)
     }
     PROCESS {
         foreach ($Computer in $ComputerName) {
